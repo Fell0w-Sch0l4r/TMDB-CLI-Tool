@@ -1,0 +1,9 @@
+{
+    "extends": "@tsconfig/node23/",
+	"compilerOptions": {
+        "noEmitOnError": true,
+        "outDir": "dist"
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+}
