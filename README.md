@@ -2,9 +2,9 @@
 
 A command-line interface (CLI) tool to interact with [The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api). This tool allows users to explore movies currently in theaters, popular movies, top-rated movies, and upcoming movies directly from the terminal.
 
-## Project Roadmap
+## Project URL
 
-For a detailed roadmap of the project, visit [TMDB CLI Tool Roadmap](https://roadmap.sh/projects/tmdb-cli).
+For a detailed view of the project, visit [TMDB CLI Tool](https://roadmap.sh/projects/tmdb-cli).
 
 ## Features
 
