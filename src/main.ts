@@ -74,11 +74,13 @@ const options = {
       Authorization: 'Bearer ' + process.env.ACCESS_TOKEN_AUTH
     }
   };
-  
-  axios
-    .request<ApiResponse>(options)
-    .then(res => {
-        const movies: Movie[] = res.data.results;
-        movies.forEach(({ title }) => console.log(title));
-    })
-    .catch(err => console.error(err));
+
+ try {
+    const apiResponse = await axios.request<ApiResponse>(options)
+    const movies: Movie[] = apiResponse.data.results
+   
+    movies.forEach(({ title }) => console.log(title));
+   
+ } catch (error) {
+    console.error(error)
+ }
