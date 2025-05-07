@@ -24,7 +24,7 @@ For a detailed view of the project, visit [TMDB CLI Tool](https://roadmap.sh/pro
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/tmdb-cli-tool.git
+    git clone https://github.com/Fell0w-Sch0l4r/TMDB-CLI-Tool.git
     cd tmdb-cli-tool
     ```
 
