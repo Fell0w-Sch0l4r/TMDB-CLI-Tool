@@ -31,44 +31,7 @@ config();
 
 //console.log(process.env.ACCESS_TOKEN_AUTH)
 let url: string = "";
-
-const answer = await inquirer.prompt([
-	{
-		type: "list",
-		name: "things",
-		message: "Which movies do you want to see?",
-		choices: [
-			"Currently on Theaters",
-			"The most popular movies",
-			"The top movies",
-			"Upcoming movies",
-		],
-	},
-]);
-
-//console.log(answer.things)
-
-switch (answer.things) {
-	case "Currently on Theaters":
-		url = "now_playing";
-		break;
-
-	case "The most popular movies":
-		url = "popular";
-		break;
-
-	case "The top movies":
-		url = "top_rated";
-		break;
-
-	case "Upcoming movies":
-		url = "upcoming";
-		break;
-
-	default:
-		console.error("Something Went Wrong :(");
-		abort();
-}
+let again: boolean = true
 
 async function getMovies(type: string) {
 	const options = {
@@ -90,4 +53,58 @@ async function getMovies(type: string) {
 	}
 }
 
-getMovies(url)
+while(again){
+	const answer = await inquirer.prompt([
+		{
+			type: "list",
+			name: "things",
+			message: "Which movies do you want to see?",
+			choices: [
+				"Currently on Theaters",
+				"The most popular movies",
+				"The top movies",
+				"Upcoming movies",
+			],
+		},
+	]);
+	
+	//console.log(answer.things)
+	
+	switch (answer.things) {
+		case "Currently on Theaters":
+			url = "now_playing";
+			break;
+	
+		case "The most popular movies":
+			url = "popular";
+			break;
+	
+		case "The top movies":
+			url = "top_rated";
+			break;
+	
+		case "Upcoming movies":
+			url = "upcoming";
+			break;
+	
+		default:
+			console.error("Something Went Wrong :(");
+			abort();
+	}
+	
+	
+	
+	getMovies(url)
+
+	const continueAnswer = await inquirer.prompt([
+		{
+			type: "list",
+			name: "things",
+			message: "Do you want do choose other movies?",
+			choices: ["Yes", "No"]
+		}
+	]);
+
+	again = continueAnswer.things === "Yes"? true:false
+}
+
