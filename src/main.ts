@@ -29,11 +29,14 @@ interface ApiResponse {
 
 config();
 
-//console.log(process.env.ACCESS_TOKEN_AUTH)
 let url: string = "";
 let again: boolean = true
 
 async function getMovies(type: string) {
+	if (!process.env.ACCESS_TOKEN_AUTH) {
+		throw new Error("ACCESS_TOKEN_AUTH environment variable is not defined.");
+	}
+	
 	const options = {
 		method: "GET",
 		url: `https://api.themoviedb.org/3/movie/${type}?language=en-US&page=1`,
@@ -47,7 +50,9 @@ async function getMovies(type: string) {
 		const apiResponse = await axios.request<ApiResponse>(options);
 		const movies: Movie[] = apiResponse.data.results;
 
-		movies.forEach(({ title }) => console.log(title));
+		movies.forEach((movie, index) => {
+			console.log(`${index + 1}. ${movie.title} (${movie.release_date})`);
+		});
 	} catch (error) {
 		console.error(error);
 	}
@@ -68,7 +73,7 @@ while(again){
 		},
 	]);
 	
-	//console.log(answer.things)
+
 	
 	switch (answer.things) {
 		case "Currently on Theaters":
