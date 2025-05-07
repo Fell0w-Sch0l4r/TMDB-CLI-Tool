@@ -2,6 +2,10 @@
 
 A command-line interface (CLI) tool to interact with [The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api). This tool allows users to search for movies, TV shows, and actors, retrieve detailed information, and explore trending content directly from the terminal.
 
+## Project Roadmap
+
+For an overview of the project's roadmap and planned features, visit [TMDB CLI Tool Roadmap](https://roadmap.sh/projects/tmdb-cli).
+
 ## Features
 
 -   Search for movies, TV shows, and actors.
