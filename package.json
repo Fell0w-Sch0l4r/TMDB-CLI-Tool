@@ -13,5 +13,6 @@
 	},
 	"scripts": {
 		"build": "tsc && node dist/main.js"
-	}
+	},
+	"type": "module"
 }
