@@ -1,16 +1,17 @@
 # TMDB CLI Tool
 
-A command-line interface (CLI) tool to interact with [The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api). This tool allows users to search for movies, TV shows, and actors, retrieve detailed information, and explore trending content directly from the terminal.
+A command-line interface (CLI) tool to interact with [The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api). This tool allows users to explore movies currently in theaters, popular movies, top-rated movies, and upcoming movies directly from the terminal.
 
 ## Project Roadmap
 
-For an overview of the project's roadmap and planned features, visit [TMDB CLI Tool Roadmap](https://roadmap.sh/projects/tmdb-cli).
+For a detailed roadmap of the project, visit [TMDB CLI Tool Roadmap](https://roadmap.sh/projects/tmdb-cli).
 
 ## Features
 
--   Search for movies, TV shows, and actors.
--   Retrieve detailed information about a specific movie or TV show.
--   Explore trending content on TMDB.
+-   View movies currently in theaters.
+-   Explore the most popular movies.
+-   Discover top-rated movies.
+-   Check out upcoming movies.
 -   Display results in a user-friendly format in the terminal.
 
 ## Prerequisites
@@ -35,24 +36,18 @@ For an overview of the project's roadmap and planned features, visit [TMDB CLI T
 
 3. Create a `.env` file in the root directory and add your TMDB API Access:
     ```env
-    ACCESS_TOKEN_AUTHO="your_tmdb_access_token"
+    ACCESS_TOKEN_AUTH="your_tmdb_access_token"
     ```
 
 ## Usage
 
-1. Build the project:
+1. Run the CLI tool:
 
     ```bash
     npm run build
     ```
 
-2. Run the CLI tool:
-
-    ```bash
-    node dist/main.js
-    ```
-
-3. Follow the prompts to search for movies, TV shows, or actors.
+2. Follow the prompts to explore movies by category.
 
 ## Project Structure
 
@@ -63,7 +58,7 @@ For an overview of the project's roadmap and planned features, visit [TMDB CLI T
 ├── package.json        # Project dependencies and scripts
 ├── tsconfig.json       # TypeScript configuration
 ├── src/
-│   └── src/main.ts     # Entry point for the CLI tool
+│   └── main.ts         # Entry point for the CLI tool
 ```
 
 ## API Reference
